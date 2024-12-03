@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="animated-logo-bus">
+                    <i class="fas fa-bus"></i>
+                    <div class="wheel front-wheel"></div>
+                    <div class="wheel back-wheel"></div>
+                </div>
+                <span class="brand-name">redBus</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#" class="nav-link active">Bus Tickets</a>
+                <a href="#" class="nav-link">
+                    Help
+                    <span class="icon">🎧</span>
+                </a>
+                <div class="language-selector">
+                    <select>
+                        <option>English</option>
+                        <option>Hindi</option>
+                        <option>Telugu</option>
+                    </select>
+                </div>
+                <a href="login.html" class="nav-link account-btn">
+                    <i class="fas fa-user"></i>
+                    Account
+                </a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="search-container">
+                <div class="title-container">
+                    <div class="animated-bus">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h1 class="search-title">Book Your Journey</h1>
+                    <div class="animated-bus right">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                </div>
+                <form class="search-form" action="results.html" method="GET">
+                    <div class="search-grid">
+                        <div class="input-wrapper source">
+                            <label>From</label>
+                            <i class="fas fa-map-marker-alt location-icon from-icon"></i>
+                            <input 
+                                type="text" 
+                                name="from" 
+                                placeholder="Enter Source City" 
+                                class="search-input" 
+                                required 
+                                oninput="showSuggestions(this.value, 'from-suggestions')" 
+                            />
+                            <div id="from-suggestions" class="suggestions"></div>
+                        </div>
+                        
+                        <button type="button" class="swap-btn" onclick="swapLocations()">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        
+                        <div class="input-wrapper destination">
+                            <label>To</label>
+                            <i class="fas fa-map-marker-alt location-icon to-icon"></i>
+                            <input 
+                                type="text" 
+                                name="to" 
+                                placeholder="Enter Destination City" 
+                                class="search-input" 
+                                required 
+                                oninput="showSuggestions(this.value, 'to-suggestions')" 
+                            />
+                            <div id="to-suggestions" class="suggestions"></div>
+                        </div>
+
+                        <div class="input-wrapper date">
+                            <label>Travel Date</label>
+                            <i class="far fa-calendar-alt calendar-icon"></i>
+                            <input 
+                                type="date" 
+                                name="journey-date" 
+                                class="search-input date-input"
+                                required
+                            />
+                        </div>
+
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-search"></i>
+                            <span>Search Buses</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <div class="offers-container">
+            <div class="offers-header">
+                <h2>TRENDING OFFERS</h2>
+                <button class="view-all" onclick="window.location.href='all-offers.html'">View All Offers</button>
+            </div>
+            <div class="offers-scroll">
+                <div class="offer-cards">
+                    <div class="offer-card">
+                        <img src="1.png" alt="Offer 1" class="offer-image">
+                        <p>Save up to Rs 250 on bus tickets</p>
+                    </div>
+                    <div class="offer-card">
+                        <img src="2.png" alt="Offer 2" class="offer-image">
+                        <p>Save up to Rs 300 on AP, TS routes</p>
+                    </div>
+                    <div class="offer-card">
+                        <img src="3.png" alt="Offer 3" class="offer-image">
+                        <p>Save Up to Rs 250 on APSRTC tickets</p>
+                    </div>
+                    <div class="offer-card">
+                        <img src="4.png" alt="Offer 4" class="offer-image">
+                        <p>Save up to 50% on Chartered Buses</p>
+                    </div>
+                    <!-- Add more offer cards as needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Caption below Trending Offers -->
+        <div class="caption">
+            Apno ko, Sapno ko Kareeb Laaye.
+        </div>
+
+        <!-- New Sections -->
+        <div class="info-sections">
+            <div class="info-section">
+                <h2>About redBus</h2>
+                <ul>
+                    <li>About us</li>
+                    <li>Investor Relations</li>
+                    <li>Contact us</li>
+                    <li>Mobile version</li>
+                    <li>redBus on mobile</li>
+                    <li>Sitemap</li>
+                    <li>Offers</li>
+                    <li>Careers</li>
+                    <li>Values</li>
+                </ul>
+            </div>
+            <div class="info-section">
+                <h2>Info</h2>
+                <ul>
+                    <li>T&C</li>
+                    <li>Privacy policy</li>
+                    <li>FAQ</li>
+                    <li>Blog</li>
+                    <li>Bus operator registration</li>
+                    <li>Agent registration</li>
+                    <li>Insurance partner</li>
+                    <li>User agreement</li>
+                    <li>Primo Bus</li>
+                    <li>Bus Timetable</li>
+                </ul>
+            </div>
+            <div class="info-section">
+                <h2>Global Sites</h2>
+                <ul>
+                    <li>India</li>
+                    <li>Singapore</li>
+                    <li>Malaysia</li>
+                    <li>Indonesia</li>
+                    <li>Peru</li>
+                    <li>Colombia</li>
+                    <li>Cambodia</li>
+                    <li>Vietnam</li>
+                </ul>
+            </div>
+            <div class="info-section">
+                <h2>Our Partners</h2>
+                <ul>
+                    <li>Goibibo Bus</li>
+                    <li>Goibibo Hotels</li>
+                    <li>Makemytrip Hotels</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Ⓒ 2024 Redbus India Pvt Ltd. All rights reserved.</p>
+        <div class="social-links">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const places = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose"];
+
+        function showSuggestions(value, suggestionBoxId) {
+            const suggestionsBox = document.getElementById(suggestionBoxId);
+            suggestionsBox.innerHTML = ''; // Clear previous suggestions
+
+            if (value) {
+                const filteredPlaces = places.filter(place => place.toLowerCase().startsWith(value.toLowerCase()));
+                filteredPlaces.forEach(place => {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.textContent = place;
+                    suggestionItem.classList.add('suggestion-item');
+                    suggestionItem.onclick = () => selectPlace(place, suggestionBoxId);
+                    suggestionsBox.appendChild(suggestionItem);
+                });
+            }
+        }
+
+        function selectPlace(place, suggestionBoxId) {
+            const inputField = suggestionBoxId === 'from-suggestions' ? document.querySelector('input[name="from"]') : document.querySelector('input[name="to"]');
+            inputField.value = place;
+            document.getElementById(suggestionBoxId).innerHTML = ''; // Clear suggestions
+        }
+    </script>
+</body>
+</html> 

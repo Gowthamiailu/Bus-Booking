@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ticket</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">redBus</div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="booking-container">
+            <!-- Journey Details Header -->
+            <div class="bus-details-header">
+                <div class="detail-box">
+                    <h3>From</h3>
+                    <p id="from-location">Mumbai</p>
+                </div>
+                <div class="detail-box">
+                    <h3>To</h3>
+                    <p id="to-location">Pune</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Date</h3>
+                    <p id="journey-date">15 Apr 2024</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Passengers</h3>
+                    <p id="passenger-count">1</p>
+                </div>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="booking-form">
+                <h2>Complete Your Booking</h2>
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="seats">Number of Seats</label>
+                        <input type="number" id="seats" min="1" max="6" required>
+                    </div>
+                    <button type="submit">Confirm Booking</button>
+                </form>
+            </div>
+
+            <!-- Add this section after your search form -->
+            <div class="bus-search-results">
+                <!-- Sample Bus Card -->
+                <div class="bus-card">
+                    <div class="bus-details">
+                        <h3 class="bus-name">Sharma Travels</h3>
+                        <div class="bus-type">
+                            <i class="fas fa-bus"></i>
+                            AC Sleeper (2+1)
+                        </div>
+                    </div>
+
+                    <div class="schedule">
+                        <span class="time">21:00</span>
+                        <span class="duration">8h 30m</span>
+                        <span class="time">05:30</span>
+                    </div>
+
+                    <div class="features">
+                        <span class="feature">
+                            <i class="fas fa-wifi"></i>
+                            WiFi
+                        </span>
+                        <span class="feature">
+                            <i class="fas fa-charging-station"></i>
+                            Charging
+                        </span>
+                        <span class="feature">
+                            <i class="fas fa-video"></i>
+                            TV
+                        </span>
+                    </div>
+
+                    <div class="price-booking">
+                        <div class="price">₹899</div>
+                        <div class="seats">36 seats left</div>
+                        <button class="book-button">Book Now</button>
+                    </div>
+
+                    <div class="rating">4.5 ★</div>
+                </div>
+
+                <!-- Add more bus cards as needed -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Function to get URL parameters and populate fields
+        function populateBookingDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById('from-location').textContent = urlParams.get('from') || 'Mumbai';
+            document.getElementById('to-location').textContent = urlParams.get('to') || 'Pune';
+            document.getElementById('journey-date').textContent = urlParams.get('date') || '15 Apr 2024';
+            document.getElementById('passenger-count').textContent = urlParams.get('passengers') || '1';
+        }
+
+        window.onload = populateBookingDetails;
+    </script>
+</body>
+</html> 

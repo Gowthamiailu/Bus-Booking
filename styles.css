@@ -1,0 +1,1695 @@
+/* Global Styles */
+:root {
+    --primary-color: #d84e55;
+    --secondary-color: #4a4a4a;
+    --accent-color: #ff6b6b;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.main-header {
+    background: var(--primary-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.account-btn {
+    background: white;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Search Section Styles */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bus-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.search-container {
+    position: relative;
+    width: 95%;
+    max-width: 1400px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 20px auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.search-title {
+    color: #333;
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    animation: slideUp 0.6s ease-out;
+}
+
+.search-grid {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0.5cm;
+    padding: 20px;
+    flex-wrap: nowrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 220px;
+    flex: 0 0 220px;
+    min-width: 220px;
+    max-width: 220px;
+}
+
+.input-wrapper label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.search-input,
+.date-input {
+    width: 100%;
+    height: 54px;
+    padding: 0 15px 0 45px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+    box-sizing: border-box;
+}
+
+.search-input:hover {
+    border-color: #bdbdbd;
+}
+
+.search-input:focus {
+    border-color: #d84e55;
+    box-shadow: 0 0 0 4px rgba(216, 78, 85, 0.1);
+    outline: none;
+}
+
+.location-icon,
+.calendar-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+.from-icon { color: #4CAF50; }
+.to-icon { color: #f44336; }
+.calendar-icon { color: #2196F3; }
+
+.swap-btn {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    margin-bottom: 7px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #e0e0e0;
+}
+
+.swap-btn:hover {
+    background: #f5f5f5;
+    transform: rotate(180deg);
+    border-color: #d84e55;
+}
+
+.search-button {
+    flex: 0 0 220px;
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+    height: 54px;
+    margin: 0;
+    padding: 0;
+    background: #d84e55;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.search-button:hover {
+    background: #c04147;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(216, 78, 85, 0.2);
+}
+
+.suggestions {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.suggestion-item:hover {
+    background: #f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .search-grid {
+        gap: 0.5cm;
+    }
+}
+
+@media (max-width: 1200px) {
+    .search-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5cm;
+    }
+
+    .input-wrapper,
+    .search-button {
+        flex: 0 0 220px;
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5cm;
+    }
+
+    .swap-btn {
+        display: none;
+    }
+
+    .input-wrapper,
+    .search-button {
+        width: 100%;
+        max-width: 220px;
+    }
+}
+
+/* Animation for suggestions */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.suggestions {
+    animation: slideDown 0.3s ease;
+}
+
+/* For horizontal scrolling offer cards */
+.offers-scroll {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.offer-cards {
+    display: flex;
+    gap: 20px;
+    min-width: min-content;
+    padding: 0 20px;
+}
+
+.offer-card {
+    min-width: 250px; /* Fixed width for cards */
+    flex-shrink: 0;
+}
+
+/* For info sections layout */
+.info-sections {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-section {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.info-section h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.info-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-section li {
+    margin-bottom: 8px;
+}
+
+.offers-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.offers-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.offers-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.offers-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Container for the entire offers section */
+.offers-container {
+    max-width: 1200px;
+    margin: 40px auto; /* Centers the container horizontally */
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header section with title and view all button */
+.offers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.offers-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.view-all {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    padding: 8px 16px;
+    background: transparent;
+    color: #d84e55;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+/* Caption section styles - full width */
+.caption {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin: 40px 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+/* Footer styling */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--background-color);
+    border-top: 1px solid #ddd;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-links i {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.social-links i:hover {
+    color: var(--primary-color);
+}
+
+footer p {
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+/* Login and Signup Page Styles */
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: var(--primary-color);
+    padding: 1rem 0;
+    box-shadow: var(--shadow-sm);
+}
+
+header .logo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.login-form, .signup-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem 0;
+}
+
+main h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.login-form input, .signup-form input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.login-form input:focus, .signup-form input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(216,78,85,0.1);
+    outline: none;
+}
+
+.login-form button, .signup-form button {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.login-form button:hover, .signup-form button:hover {
+    background: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+main p {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-top: 1rem;
+}
+
+main a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+main a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Footer for login/signup pages */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    color: var(--secondary-color);
+    border-top: 1px solid #eee;
+    margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .login-form, .signup-form {
+        padding: 1.5rem;
+    }
+
+    main h2 {
+        font-size: 1.75rem;
+    }
+
+    header .logo {
+        font-size: 1.5rem;
+    }
+}
+
+/* Booking page styles */
+.booking-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+/* Bus details header */
+.bus-details-header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.detail-box {
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.detail-box h3 {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.detail-box p {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Bus list styles */
+.bus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bus-item {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    align-items: center;
+    gap: 20px;
+    transition: var(--transition);
+}
+
+.bus-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.bus-info h3 {
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.bus-type {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.time-info {
+    text-align: center;
+}
+
+.departure-time, .arrival-time {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.duration {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Booking form styles */
+.booking-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.booking-form h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(216,78,85,0.1);
+    outline: none;
+}
+
+.booking-form button {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.booking-form button:hover {
+    background: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .bus-details-header {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bus-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .booking-container {
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+/* Available Buses Page Styles */
+.available-buses-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Filter and Sort Section */
+.filters {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Bus List Container */
+.bus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.bus-item {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr auto;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.bus-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Bus Info Section */
+.bus-info {
+    padding-right: 20px;
+}
+
+.bus-info h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.bus-type {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Time Info Section */
+.time-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.departure-time, .arrival-time {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.duration {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    padding: 4px 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* Amenities Section */
+.amenities {
+    display: flex;
+    gap: 15px;
+}
+
+.amenity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* Price Section */
+.price-section {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.seats-left {
+    font-size: 0.9rem;
+    color: #28a745;
+}
+
+/* Book Now Button */
+.book-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.book-btn:hover {
+    background: var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .bus-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 60px; /* Space for price at top */
+    }
+
+    .price-section {
+        width: 100%;
+        position: absolute;
+        top: 15px;
+        right: 0;
+        text-align: center;
+    }
+
+    .amenities {
+        justify-content: center;
+    }
+
+    .time-info {
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .available-buses-container {
+        padding: 0 10px;
+    }
+
+    .bus-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .price {
+        font-size: 1.3rem;
+    }
+}
+
+/* Available Buses Layout */
+.bus-search-results {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.bus-card {
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.bus-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.bus-details {
+    padding-right: 20px;
+}
+
+.bus-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.bus-type {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.time {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.duration {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    padding: 4px 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.features {
+    display: flex;
+    gap: 15px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.price-booking {
+    text-align: right;
+    padding-left: 20px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.seats {
+    color: #28a745;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.book-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-button:hover {
+    background: var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* Rating badge */
+.rating {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .bus-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .bus-details, .schedule, .features, .price-booking {
+        padding: 0;
+    }
+
+    .features {
+        justify-content: center;
+    }
+
+    .rating {
+        position: static;
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bus-search-results {
+        padding: 10px;
+    }
+
+    .bus-card {
+        padding: 15px;
+    }
+
+    .price {
+        font-size: 1.3rem;
+    }
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+    .input-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .swap-btn {
+        transform: rotate(90deg);
+        margin: 10px auto;
+    }
+    
+    .bottom-group {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Apply animations to elements */
+.search-container {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.search-title {
+    animation: slideUp 0.6s ease-out;
+}
+
+.input-wrapper {
+    animation: slideUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+/* Stagger the animations */
+.input-wrapper:nth-child(1) { animation-delay: 0.2s; }
+.input-wrapper:nth-child(2) { animation-delay: 0.4s; }
+.input-wrapper:nth-child(3) { animation-delay: 0.6s; }
+
+/* Enhanced input icons with animations */
+.location-icon,
+.calendar-icon {
+    transition: all 0.3s ease;
+}
+
+.input-wrapper:hover .location-icon,
+.input-wrapper:hover .calendar-icon {
+    animation: bounce 1s infinite;
+    color: #d84e55;
+}
+
+/* Enhanced swap button */
+.swap-btn i {
+    transition: all 0.3s ease;
+}
+
+.swap-btn:hover i {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Pulsing effect for search button */
+.search-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.search-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s;
+}
+
+.search-button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.search-button:hover i {
+    animation: bounce 1s infinite;
+}
+
+/* Offer cards animations */
+.offer-card {
+    transition: all 0.3s ease;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Social links animations */
+.social-links i {
+    transition: all 0.3s ease;
+}
+
+.social-links i:hover {
+    animation: bounce 0.8s infinite;
+    color: #d84e55;
+}
+
+/* Navigation links effect */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Language selector enhancement */
+.language-selector select {
+    transition: all 0.3s ease;
+}
+
+.language-selector select:hover {
+    transform: translateY(-2px);
+}
+
+/* Logo animation */
+.logo svg {
+    transition: all 0.3s ease;
+}
+
+.logo:hover svg {
+    animation: pulse 1s infinite;
+}
+
+/* Suggestions animation enhancement */
+.suggestion-item {
+    transition: all 0.2s ease;
+    position: relative;
+    padding-left: 25px;
+}
+
+.suggestion-item::before {
+    content: '→';
+    position: absolute;
+    left: 10px;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.suggestion-item:hover::before {
+    opacity: 1;
+    left: 15px;
+}
+
+/* Loading animation for search */
+@keyframes searching {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.search-button.loading i {
+    animation: searching 1s infinite linear;
+}
+
+/* Trending offers section enhancement */
+.offers-header h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.offers-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #d84e55, transparent);
+}
+
+/* Caption animation */
+.caption {
+    position: relative;
+    overflow: hidden;
+}
+
+.caption::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    to {
+        left: 100%;
+    }
+}
+
+/* Info sections hover effect */
+.info-section {
+    transition: all 0.3s ease;
+}
+
+.info-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.info-section li {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.info-section li:hover {
+    color: #d84e55;
+    padding-left: 5px;
+}
+
+/* Add styles for the title container and animated bus */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.animated-bus {
+    font-size: 2.5rem;
+    color: #d84e55;
+    animation: moveBus 3s infinite;
+}
+
+.animated-bus.right {
+    transform: scaleX(-1);
+    animation: moveBusRight 3s infinite;
+}
+
+.animated-bus i {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+@keyframes moveBus {
+    0% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes moveBusRight {
+    0% {
+        transform: translateX(10px) scaleX(-1);
+    }
+    50% {
+        transform: translateX(-10px) scaleX(-1);
+    }
+    100% {
+        transform: translateX(10px) scaleX(-1);
+    }
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+    .title-container {
+        gap: 10px;
+    }
+    
+    .animated-bus {
+        font-size: 2rem;
+    }
+    
+    .search-title {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-bus {
+        font-size: 1.5rem;
+    }
+    
+    .search-title {
+        font-size: 1.5em;
+    }
+}
+
+/* Add these new styles for the animated logo bus */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.animated-logo-bus {
+    position: relative;
+    font-size: 2.2rem;
+    color: white;
+    animation: floatBus 3s ease-in-out infinite;
+}
+
+.wheel {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    bottom: 2px;
+    animation: rotateWheel 2s linear infinite;
+}
+
+.front-wheel {
+    right: 5px;
+}
+
+.back-wheel {
+    left: 5px;
+}
+
+@keyframes floatBus {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes rotateWheel {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.brand-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+/* Add hover effect */
+.logo:hover .animated-logo-bus {
+    animation: shakeBus 0.5s ease-in-out;
+}
+
+@keyframes shakeBus {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .animated-logo-bus {
+        font-size: 1.8rem;
+    }
+    
+    .brand-name {
+        font-size: 1.5rem;
+    }
+}
+
+/* Base styles */
+.search-grid {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0.5cm;
+    padding: 20px;
+    flex-wrap: nowrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 220px;
+    flex: 0 0 220px;
+    min-width: 220px;
+    max-width: 220px;
+}
+
+/* Responsive Design */
+/* Large Tablets and Small Laptops */
+@media (max-width: 1024px) {
+    .search-grid {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .input-wrapper {
+        flex: 0 0 calc(50% - 10px); /* Two columns layout */
+        width: calc(50% - 10px);
+        min-width: auto;
+        max-width: none;
+    }
+
+    .search-button {
+        flex: 0 0 calc(50% - 10px);
+        width: calc(50% - 10px);
+        min-width: auto;
+        max-width: none;
+    }
+
+    .swap-btn {
+        display: none;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .search-container {
+        padding: 15px;
+        width: 95%;
+    }
+
+    .search-grid {
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .title-container {
+        gap: 10px;
+    }
+
+    .search-title {
+        font-size: 1.8em;
+    }
+
+    .animated-bus {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 576px) {
+    .search-container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .search-grid {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .input-wrapper,
+    .search-button {
+        width: 100%;
+        flex: 0 0 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+    .search-title {
+        font-size: 1.5em;
+    }
+
+    .animated-bus {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust input and button heights for better touch targets */
+    .search-input,
+    .date-input,
+    .search-button {
+        height: 50px;
+    }
+
+    /* Adjust label and icon sizes */
+    .input-wrapper label {
+        font-size: 14px;
+    }
+
+    .location-icon,
+    .calendar-icon {
+        font-size: 16px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 375px) {
+    .search-container {
+        padding: 8px;
+    }
+
+    .search-grid {
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .search-title {
+        font-size: 1.3em;
+    }
+
+    .animated-bus {
+        font-size: 1.3rem;
+    }
+
+    .input-wrapper label {
+        font-size: 13px;
+    }
+}
+
+/* Ensure touch targets are large enough */
+@media (hover: none) and (pointer: coarse) {
+    .search-input,
+    .date-input,
+    .search-button {
+        min-height: 44px; /* Minimum touch target size */
+    }
+
+    .search-button {
+        padding: 12px 20px;
+    }
+}
+
+/* Fix for iOS input zoom */
+@supports (-webkit-touch-callout: none) {
+    .search-input,
+    .date-input {
+        font-size: 16px;
+    }
+}
+
+/* Improve performance */
+.search-grid,
+.input-wrapper,
+.search-button {
+    will-change: transform;
+    -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Information</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Bus Information</h1>
+    </header>
+    <main>
+        <div class="result-container">
+            <h2>Your Selected Route:</h2>
+            <p id="from-place"></p>
+            <p id="to-place"></p>
+        </div>
+        
+        <h2>Available Buses:</h2>
+        <div class="bus-info">
+            <div class="bus-card">
+                <div class="route-info">
+                    <h3>Bus A</h3>
+                    <p class="location"><strong>From:</strong> New York <span class="arrow">→</span> <strong>To:</strong> Los Angeles</p>
+                </div>
+                <div class="details">
+                    <p class="time"><strong>Departure:</strong> 10:00 AM | <strong>Arrival:</strong> 1:00 PM</p>
+                    <div class="price-box"><span class="price">₹2,500</span></div>
+                </div>
+                <button onclick="bookTicket('Bus A')">Book Ticket</button>
+            </div>
+            <div class="bus-card">
+                <div class="route-info">
+                    <h3>Bus B</h3>
+                    <p class="location"><strong>From:</strong> New York <span class="arrow">→</span> <strong>To:</strong> Los Angeles</p>
+                </div>
+                <div class="details">
+                    <p class="time"><strong>Departure:</strong> 11:00 AM | <strong>Arrival:</strong> 2:00 PM</p>
+                    <div class="price-box"><span class="price">₹2,000</span></div>
+                </div>
+                <button onclick="bookTicket('Bus B')">Book Ticket</button>
+            </div>
+            <div class="bus-card">
+                <div class="route-info">
+                    <h3>Bus C</h3>
+                    <p class="location"><strong>From:</strong> New York <span class="arrow">→</span> <strong>To:</strong> Los Angeles</p>
+                </div>
+                <div class="details">
+                    <p class="time"><strong>Departure:</strong> 12:00 PM | <strong>Arrival:</strong> 3:00 PM</p>
+                    <div class="price-box"><span class="price">₹2,500</span></div>
+                </div>
+                <button onclick="bookTicket('Bus C')">Book Ticket</button>
+            </div>
+        </div>
+        
+        <button onclick="goBack()">Go Back</button>
+    </main>
+    <script>
+        // Function to get URL parameters and display selected places
+        function displaySelectedPlaces() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const from = urlParams.get('from');
+            const to = urlParams.get('to');
+
+            document.getElementById('from-place').textContent = `From: ${from}`;
+            document.getElementById('to-place').textContent = `To: ${to}`;
+        }
+
+        // Function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+
+        // Function to handle booking ticket
+        function bookTicket(busName) {
+            alert(`Booking ticket for ${busName}`);
+            // Redirect to a booking page (create booking.html)
+            window.location.href = 'booking.html?bus=' + encodeURIComponent(busName);
+        }
+
+        // Call the function to display selected places on page load
+        window.onload = displaySelectedPlaces;
+    </script>
+</body>
+</html> 
